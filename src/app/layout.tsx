@@ -1,9 +1,27 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import localFont from 'next/font/local'
 import './globals.css'
 import Navigation from '@/components/Navigation'
 
-const inter = Inter({ subsets: ['latin', 'cyrillic'] })
+const onest = localFont({
+  src: [
+    {
+      path: '../fonts/Onest-Regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/Onest-Medium.woff2',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/Onest-Bold.woff2',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+})
 
 export const metadata: Metadata = {
   title: 'Wishlist',
@@ -17,7 +35,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru" className="h-full bg-gray-50">
-      <body className={`${inter.className} h-full`}>
+      <body className={`${onest.className} h-full`}>
         <div className="min-h-full">
           <Navigation />
           <main className="py-10">
