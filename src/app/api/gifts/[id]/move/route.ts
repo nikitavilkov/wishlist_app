@@ -1,6 +1,10 @@
 import { NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
 
+// Указываю, что этот маршрут должен обрабатываться динамически на сервере
+export const dynamic = 'force-dynamic'
+export const runtime = 'nodejs'
+
 export async function POST(
   request: Request,
   { params }: { params: { id: string } }
@@ -56,4 +60,11 @@ export async function POST(
       { status: 500 }
     )
   }
+}
+
+export async function GET(
+  request: Request,
+  { params }: { params: { id: string } }
+) {
+  return NextResponse.json({}, { status: 200 })
 } 

@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
-import { Onest } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import './globals.css'
 import Navigation from '@/components/Navigation'
 
-const onest = Onest({ subsets: ['latin', 'cyrillic'] })
+const inter = Inter({ subsets: ['latin', 'cyrillic'] })
 
 export const metadata: Metadata = {
   title: 'Wishlist',
@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru" className="h-full bg-gray-50">
-      <body className={`${onest.className} h-full`}>
+      <body className={`${inter.className} h-full`}>
         <div className="min-h-full">
           <Navigation />
           <main className="py-10">
